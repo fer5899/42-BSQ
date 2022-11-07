@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bramos-l <bramos-l@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 16:34:02 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/07 16:34:15 by bramos-l         ###   ########.fr       */
+/*   Created: 2022/11/07 21:58:33 by bramos-l          #+#    #+#             */
+/*   Updated: 2022/11/07 21:58:35 by bramos-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/main.h"
+#ifndef MAIN_H
+# define MAIN_H
 
-int	main(int argc, char **argv)
-{
-	int		aux;
-	int		rows_number;
-	char	**act_map;
+#include "../inc/print_map.h"
 
-	aux = 1;
-	if (argc == 1)
-		return (1);
-	else
-	{
-		while (aux < argc)
-		{
-			rows_number = 0;
-			act_map = get_map(argv[aux], &rows_number);
-			if (check_map(act_map, rows_number) == 0)
-				write(1, "map error\n", 11);
-			aux++;
-		}
-	}
-	return (1);
-}
+#include "../inc/check_map.h"
+
+#include "../inc/get_map.h"
+
+#endif

@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_map.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bramos-l <bramos-l@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 16:34:02 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/07 16:34:15 by bramos-l         ###   ########.fr       */
+/*   Created: 2022/11/07 21:59:48 by bramos-l          #+#    #+#             */
+/*   Updated: 2022/11/07 21:59:50 by bramos-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/main.h"
+#ifndef CHECK_MAP_H
+# define CHECK_MAP_H
 
-int	main(int argc, char **argv)
-{
-	int		aux;
-	int		rows_number;
-	char	**act_map;
+#include "../inc/print_map.h"
 
-	aux = 1;
-	if (argc == 1)
-		return (1);
-	else
-	{
-		while (aux < argc)
-		{
-			rows_number = 0;
-			act_map = get_map(argv[aux], &rows_number);
-			if (check_map(act_map, rows_number) == 0)
-				write(1, "map error\n", 11);
-			aux++;
-		}
-	}
-	return (1);
-}
+#include <stdio.h>
+
+#include <unistd.h>
+
+#include <stdlib.h>
+
+int	ft_strcmp(char *s1, char *s2);
+
+int	a_to_i(char *numb);
+
+int	info_rows(char *info);
+
+int	check_map(char **map, int row_number);
+
+#endif
