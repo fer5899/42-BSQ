@@ -6,22 +6,22 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:25:17 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/07 14:35:42 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:26:19 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/print_map.h"
 
-void	putstr(char *str)
+void	put_str(char *str)
 {
 	if (*str != '\0')
 	{
 		write(1, str, 1);
-		ft_putstr(str + 1);
+		put_str(str + 1);
 	}
 }
 
-int	strlen(char *str)
+int	str_len(char *str)
 {
 	int	char_count;
 
@@ -38,10 +38,11 @@ void	print_map(char **map, int n_rows)
 {
 	int	row;
 
-	row = 0;
+	row = 1;
 	while (row < n_rows)
 	{
-		putstr(map[row]);
+		put_str(map[row]);
 		write(1, "\n", 1);
+		row++;
 	}
 }
