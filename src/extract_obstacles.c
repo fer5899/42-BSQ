@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:08:50 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/07 19:42:33 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/07 23:48:14 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ t_obs	*extract_obstacles(char **map, int n_rows, int *n_obs)
 
 int	main(void)
 {
-	//t_obs	*obs_arr;
+	t_obs	*obs_arr;
 	int		n_rows;
 	char	**map;
 	int		obs_idx;
@@ -86,23 +86,27 @@ int	main(void)
 	obs_idx = 0;
 	n_obs = 0;
 	bsq.sp_row = 4;
-	bsq.sp_col = 3;
+	bsq.sp_col = 0;
 	bsq.ep_row = 5;
 	bsq.ep_col = 4;
 	
 	map = get_map("../maps/map1", &n_rows);
 	// printf("%d\n", n_rows);
 	print_map(map, n_rows);
+	obs_arr = extract_obstacles(map, n_rows, &n_obs);
 	map = draw_bsq(map, n_rows, bsq);
 	write(1, "\n", 1);
 	print_map(map, n_rows);
-	// obs_arr = extract_obstacles(map, n_rows, &n_obs);
-	// printf("%d\n", count_obstacles(map, n_rows));
-	// while (obs_idx < n_obs)
-	// {
-	// 	printf("obstacle %d, row: %d, col: %d\n", obs_idx, \
-	// 		obs_arr[obs_idx].row, obs_arr[obs_idx].col);
-	// 	obs_idx++;
-	// }
+	printf("\nSquare is valid: %d\n\n", sq_is_valid(bsq, obs_arr, n_obs));
+	//printf("%d\n", count_obstacles(map, n_rows));
+	while (obs_idx < n_obs)
+	{
+		printf("obstacle %d, row: %d, col: %d\n", obs_idx, \
+			obs_arr[obs_idx].row, obs_arr[obs_idx].col);
+		obs_idx++;
+	}
+	//init_bsq(&bsq, 0, 0);
+	//printf("sp_row %d, sp_col: %d, ep_row: %d, ep_col: %d\n", bsq.sp_row, \
+			bsq.sp_col, bsq.ep_row, bsq.ep_col);
 }
  */
