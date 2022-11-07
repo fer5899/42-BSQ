@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:27:48 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/07 16:50:28 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:05:42 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	col_number(char *str)
 	return (result);
 }
 
-char	**map_to_2d(char *namefile, int *n_rows)
+char	**get_map(char *namefile, int *n_rows)
 {
 	char	*ol_map;
 	int		auxrows;

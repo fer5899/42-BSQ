@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bramos-l <bramos-l@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:14:28 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/07 16:14:29 by bramos-l         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:06:30 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int		row_number(char *str);
 
 int		col_number(char *str);
 
-char	**map_to_2d(char *namefile);
+char	**get_map(char *namefile, int *n_rows);
 
 #endif
