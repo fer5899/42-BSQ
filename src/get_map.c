@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bramos-l <bramos-l@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:27:48 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/07 14:27:50 by bramos-l         ###   ########.fr       */
+/*   Updated: 2022/11/07 16:50:28 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	col_number(char *str)
 	return (result);
 }
 
-char	**map_to_2d(char *namefile)
+char	**map_to_2d(char *namefile, int *n_rows)
 {
 	char	*ol_map;
 	int		auxrows;
@@ -85,8 +85,9 @@ char	**map_to_2d(char *namefile)
 	int		i;
 	char	**map;
 
+	*n_rows = row_number(ol_map);
 	ol_map = map_to_string(namefile);
-	map = (char **) malloc(sizeof(char *) * row_number(ol_map));
+	map = (char **) malloc(sizeof(char *) * *n_rows);
 	i = 0;
 	auxrows = 0;
 	while (ol_map[auxrows] != '\0')
