@@ -6,11 +6,11 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:25:17 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/07 14:31:09 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:35:42 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "../inc/print_map.h"
 
 void	putstr(char *str)
 {
