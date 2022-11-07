@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:08:50 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/07 18:08:08 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:50:25 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ t_obs	*extract_obstacles(char **map, int n_rows, int *n_obs)
 }
 
 /* 
-
 // TESTING
 
 #include "../inc/get_map.h"
@@ -85,6 +84,7 @@ int	main(void)
 	obs_idx = 0;
 	n_obs = 0;
 	map = get_map("../maps/map1", &n_rows);
+	printf("%d\n", n_rows);
 	print_map(map, n_rows);
 	obs_arr = extract_obstacles(map, n_rows, &n_obs);
 	printf("%d\n", count_obstacles(map, n_rows));
