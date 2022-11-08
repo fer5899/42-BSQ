@@ -71,6 +71,8 @@ t_square	get_start_sq(int n_rows, int n_cols, t_point sp);
 
 int			sq_size(t_square sq);
 
+char		**get_map_stdin(char *ol_map, int *n_rows);
+
 t_square	rec_find_bsq(t_square sq, t_square minsq, t_point *obs_arr);
 
 t_square	find_bsq(char **map, int n_rows, t_point *obs_arr);

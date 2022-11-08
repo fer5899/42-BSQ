@@ -107,5 +107,7 @@ int	check_map(char **map, int row_number)
 			return (0);
 		i++;
 	}
+	if (map[i] != NULL)
+		return (0);
 	return (1);
 }

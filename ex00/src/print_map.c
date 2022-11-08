@@ -42,7 +42,6 @@ void	print_map(char **map, int n_rows)
 	while (row < n_rows)
 	{
 		put_str(map[row]);
-		write(1, "\n", 1);
 		row++;
 	}
 }

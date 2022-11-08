@@ -68,6 +68,8 @@ int	col_number(char *str)
 	{
 		while (auxcols == 1 && str[aux] != '\n')
 		{
+			if (str[aux] == '\0')
+				return (result);
 			result++;
 			aux++;
 		}
@@ -94,7 +96,32 @@ char	**get_map(char *namefile, int *n_rows)
 	{
 		map[i] = (char *) malloc(sizeof(char) * col_number(ol_map) + 2);
 		auxcols = 0;
-		while (ol_map[auxrows] != 10)
+		while (ol_map[auxrows] != '\n')
+			map[i][auxcols++] = ol_map[auxrows++];
+		map[i][auxcols] = ol_map[auxrows++];
+		map[i][++auxcols] = '\0';
+		i++;
+	}
+	free(ol_map);
+	return (map);
+}
+
+char	**get_map_stdin(char *ol_map, int *n_rows)
+{
+	int		auxrows;
+	int		auxcols;
+	int		i;
+	char	**map;
+
+	*n_rows = row_number(ol_map) - 1;
+	map = (char **) malloc(sizeof(char *) * *n_rows);
+	i = 0;
+	auxrows = 0;
+	while (ol_map[auxrows] != '\0')
+	{
+		map[i] = (char *) malloc(sizeof(char) * col_number(ol_map) + 2);
+		auxcols = 0;
+		while (ol_map[auxrows] != '\n')
 			map[i][auxcols++] = ol_map[auxrows++];
 		map[i][auxcols] = ol_map[auxrows++];
 		map[i][++auxcols] = '\0';
