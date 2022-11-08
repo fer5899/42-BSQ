@@ -6,13 +6,13 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:32:11 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/08 12:21:45 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 13:03:04 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/headers.h"
 
-int	ft_str_cmp(char *s1, char *s2)
+int	str_cmp(char *s1, char *s2)
 {
 	unsigned int	i;
 
@@ -39,7 +39,7 @@ int	a_to_i(char *numb)
 
 	if (str_len(numb) > 10)
 		return (-1);
-	else if (str_len(numb) == 10 && ft_str_cmp(numb, "2147483647") == 1)
+	else if (str_len(numb) == 10 && str_cmp(numb, "2147483647") == 1)
 		return (-1);
 	aux = 0;
 	result = 0;
