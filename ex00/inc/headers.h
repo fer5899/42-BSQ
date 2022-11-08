@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:02:12 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 13:28:34 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 14:16:52 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,7 @@ void		init_sq(t_square *sq, int row, int col);
 int			sq_is_valid(t_square bsq, t_point *obs_arr);
 
 t_square	compare_squares(t_square bsq, t_square next_bsq);
+
+t_square	get_start_sq(int n_rows, int n_cols, t_point sp);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:59:05 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 13:28:54 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:31:41 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	init_pt(t_point *pt, int row, int col)
 {
 	pt->row = row;
-	pt->col + col;
+	pt->col = col;
 }
 
 void	init_sq(t_square *sq, int row, int col)
