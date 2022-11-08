@@ -6,11 +6,11 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:08:50 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 09:46:52 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 12:21:54 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/extract_obstacles.h"
+#include "../inc/headers.h"
 
 int	count_obstacles(char **map, int n_rows)
 {

@@ -6,12 +6,11 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 21:51:35 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 09:48:41 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 12:21:57 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/structs.h"
-#include "../inc/print_map.h"
+#include "../inc/headers.h"
 
 void	init_sq(t_square *sq, int max_row, int max_col)
 {

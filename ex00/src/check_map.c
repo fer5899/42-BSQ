@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bramos-l <bramos-l@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:32:11 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/07 16:32:30 by bramos-l         ###   ########.fr       */
+/*   Updated: 2022/11/08 12:21:45 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/check_map.h"
+#include "../inc/headers.h"
 
 int	ft_strcmp(char *s1, char *s2)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/insert_bsq.h"
+#include "../inc/headers.h"
 
 char	**insert_bsq(char **map, int n_rows, t_square bsq)
 {
