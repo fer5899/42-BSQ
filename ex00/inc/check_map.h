@@ -21,7 +21,7 @@
 
 #include <stdlib.h>
 
-int	ft_strcmp(char *s1, char *s2);
+int	ft_str_cmp(char *s1, char *s2);
 
 int	a_to_i(char *numb);
 
