@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:08:50 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 09:42:53 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 09:46:52 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,14 @@ t_point	*extract_obstacles(char **map, int n_rows, int *n_obs)
 	return (aux);
 }
 
-/* 
+
 // TESTING
 
 #include "../inc/get_map.h"
 #include "../inc/draw_bsq.h"
 #include <stdio.h>
+
+int	sq_is_valid(t_square bsq, t_point *obs_arr, int n_obs);
 
 int	main(void)
 {
@@ -109,4 +111,3 @@ int	main(void)
 	//printf("sp_row %d, sp_col: %d, ep_row: %d, ep_col: %d\n", bsq.sp.row, \
 			bsq.sp.col, bsq.ep.row, bsq.ep.col);
 }
-*/
