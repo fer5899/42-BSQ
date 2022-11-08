@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extract_obstacles.c                                :+:      :+:    :+:   */
+/*   extract_obs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:08:50 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 12:21:54 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 12:49:38 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ t_point	*extract_obstacles(char **map, int n_rows, int *n_obs)
 	return (aux);
 }
 
-
+/*
 // // TESTING
 
-// #include "../inc/get_map.h"
+// #include "../incclearget_map.h"
 // #include "../inc/insert_bsq.h"
 // #include <stdio.h>
 
@@ -111,3 +111,4 @@ t_point	*extract_obstacles(char **map, int n_rows, int *n_obs)
 // 	//printf("sp_row %d, sp_col: %d, ep_row: %d, ep_col: %d\n", bsq.sp.row, \
 // 			bsq.sp.col, bsq.ep.row, bsq.ep.col);
 // }
+*/
