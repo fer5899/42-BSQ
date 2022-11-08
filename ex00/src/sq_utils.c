@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:59:05 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 17:27:52 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 23:18:16 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_point	init_pt(int row, int col)
 {
 	t_point	pt;
-	
+
 	pt.row = row;
 	pt.col = col;
 	return (pt);
@@ -24,7 +24,7 @@ t_point	init_pt(int row, int col)
 t_square	init_sq(t_point sp, t_point ep)
 {
 	t_square	sq;
-	
+
 	sq.sp.row = sp.row;
 	sq.sp.col = sp.col;
 	sq.ep.row = ep.row;
