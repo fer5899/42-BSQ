@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:08:50 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 12:49:38 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 13:08:48 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	count_obstacles(char **map, int n_rows)
 	return (n_obs);
 }
 
-t_point	*extract_obstacles(char **map, int n_rows, int *n_obs)
+t_point	*extract_obstacles(char **map, int n_rows)
 {
 	int		row;
 	int		col;
@@ -46,23 +46,21 @@ t_point	*extract_obstacles(char **map, int n_rows, int *n_obs)
 
 	row = 1;
 	col = 0;
-	*n_obs = count_obstacles(map, n_rows);
-	obs_arr = (t_point *) malloc(sizeof(*obs_arr) * *n_obs);
+	obs_arr = (t_point *) malloc(sizeof(*obs_arr) * \
+		(count_obstacles(map, n_rows) + 1));
 	aux = obs_arr;
 	while (row < n_rows)
 	{
 		while (col < str_len(map[1]))
 		{
 			if (map[row][col] == map[0][str_len(map[0]) - 3])
-			{
-				obs_arr->row = row;
-				(obs_arr++)->col = col;
-			}
+				init_pt(obs_arr++, row, col);
 			col++;
 		}
 		col = 0;
 		row++;
 	}
+	init_pt(obs_arr, -1, -1);
 	return (aux);
 }
 
