@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:02:12 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 12:07:55 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 13:28:34 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,32 +28,44 @@ typedef struct s_square {
 	t_point	ep;
 }	t_square;
 
-int		str_cmp(char *s1, char *s2);
+int			str_cmp(char *s1, char *s2);
 
-int		a_to_i(char *numb);
+int			a_to_i(char *numb);
 
-int		info_rows(char *info);
+int			info_rows(char *info);
 
-int		check_map(char **map, int row_number);
+int			check_chars_in_line(char **map, int i);
 
-int		count_obstacles(char **map, int n_rows);
+int			check_map(char **map, int row_number);
 
-t_point	*extract_obstacles(char **map, int n_rows, int *n_obs);
+int			count_obstacles(char **map, int n_rows);
 
-char	*map_to_string(char *namefile);
+t_point		*extract_obstacles(char **map, int n_rows);
 
-int		row_number(char *str);
+char		*map_to_string(char *namefile);
 
-int		col_number(char *str);
+int			row_number(char *str);
 
-char	**get_map(char *namefile, int *n_rows);
+int			col_number(char *str);
 
-char	**insert_bsq(char **map, int n_rows, t_square bsq);
+char		**get_map(char *namefile, int *n_rows);
 
-void	put_str(char *str);
+char		**insert_bsq(char **map, int n_rows, t_square bsq);
 
-int		str_len(char *str);
+int			obs_arr_len(t_point *obs_arr);
 
-void	print_map(char **map, int n_rows);
+void		put_str(char *str);
+
+int			str_len(char *str);
+
+void		print_map(char **map, int n_rows);
+
+void		init_pt(t_point *pt, int row, int col);
+
+void		init_sq(t_square *sq, int row, int col);
+
+int			sq_is_valid(t_square bsq, t_point *obs_arr);
+
+t_square	compare_squares(t_square bsq, t_square next_bsq);
 
 #endif
