@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:04:01 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/07 18:07:24 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 09:36:54 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@
 
 int		count_obstacles(char **map, int n_rows);
 
-t_obs	*extract_obstacles(char **map, int n_rows, int *n_obs);
+t_point	*extract_obstacles(char **map, int n_rows, int *n_obs);
 
 #endif
