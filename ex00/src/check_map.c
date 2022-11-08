@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:32:11 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/08 19:05:48 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 21:06:49 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int	info_rows(char *info)
 
 	aux = 0;
 	rows_info = (char *) malloc(sizeof(char) * str_len(info));
+	if (rows_info == NULL)
+		exit(2);
 	while (aux < str_len(info) - 4)
 	{
 		rows_info[aux] = info[aux];
