@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:02:12 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 17:58:11 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 18:39:43 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,7 @@ t_square	get_start_sq(int n_rows, int n_cols, t_point sp);
 int			sq_size(t_square sq);
 
 t_square	rec_find_bsq(t_square sq, t_square minsq, t_point *obs_arr);
+
+t_square	find_bsq(char **map, int n_rows, t_point *obs_arr);
 
 #endif
