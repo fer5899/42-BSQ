@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:27:48 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/08 12:22:01 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 22:00:51 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@ char	*map_to_string(char *namefile)
 {
 	int		file_adress;
 	int		aux;
-	int		closing_result;
 	char	*str;
 
 	str = malloc(sizeof(char) * 1);
+	if (str == NULL)
+		exit(2);
 	file_adress = open (namefile, O_RDONLY);
 	aux = 1;
 	if (file_adress == -1)
@@ -30,11 +31,12 @@ char	*map_to_string(char *namefile)
 			aux++;
 		free(str);
 		str = (char *) malloc(sizeof(char) * --aux);
-		file_adress = open (namefile, O_RDONLY);
+		if (str == NULL)
+			exit(2);
+		file_adress = open(namefile, O_RDONLY);
 		read(file_adress, str, aux);
 	}
-	closing_result = close(file_adress);
-	if (closing_result == -1)
+	if (close(file_adress) == -1)
 		write(1, "map error\n", 10);
 	return (str);
 }
