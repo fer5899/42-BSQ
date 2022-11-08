@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:34:02 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/08 12:22:08 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 19:49:21 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,13 @@
 int	main(int argc, char **argv)
 {
 	int			aux;
-	int			rows_number;
-	char		**act_map;
+	int			n_rows;
+	char		**map;
 	char		ch;
 	char		stdin_map[100];
 	t_square	bsq;
 
-	bsq.sp.row = 1;
-	bsq.sp.col = 0;
-	bsq.ep.row = 2;
-	bsq.ep.col = 3;
+	bsq = init_sq(init_pt(0, 0), init_pt(-1, -1));
 	aux = 0;
 	if (argc == 1)
 	{
@@ -33,23 +30,29 @@ int	main(int argc, char **argv)
 			stdin_map[aux] = ch;
 			aux++;
 		}
-		rows_number = 0;
-		act_map = get_map_stdin(stdin_map, &rows_number);
-		print_map(act_map, rows_number);
+		n_rows = 0;
+		map = get_map_stdin(stdin_map, &n_rows);
+		print_map(map, n_rows);
 	}
 	else
 	{
 		aux = 1;
 		while (aux < argc)
 		{
-			rows_number = 0;
-			act_map = get_map(argv[aux], &rows_number);
-			if (check_map(act_map, rows_number) == 0)
+			n_rows = 0;
+			map = get_map(argv[aux], &n_rows);
+			// print_map(map, n_rows);
+			if (check_map(map, n_rows) == 0)
 				write(1, "map error\n", 11);
-			//insert_bsq(act_map, rows_number, bsq);
-			print_map(act_map, rows_number);
+			else
+			{
+				bsq = find_bsq(map, n_rows, extract_obstacles(map, n_rows));
+				if (bsq.ep.row != -1)
+					insert_bsq(map, n_rows, bsq);
+				print_map(map, n_rows);
+			}
 			aux++;
 		}
 	}
-	return (1);
+	return (0);
 }
