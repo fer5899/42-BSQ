@@ -6,14 +6,13 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:02:12 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 17:28:18 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 17:58:11 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEADERS_H
 # define HEADERS_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
@@ -69,5 +68,9 @@ int			sq_is_valid(t_square bsq, t_point *obs_arr);
 t_square	compare_squares(t_square bsq, t_square next_bsq);
 
 t_square	get_start_sq(int n_rows, int n_cols, t_point sp);
+
+int			sq_size(t_square sq);
+
+t_square	rec_find_bsq(t_square sq, t_square minsq, t_point *obs_arr);
 
 #endif
