@@ -6,24 +6,30 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:59:05 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 16:31:41 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 17:27:52 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/headers.h"
 
-void	init_pt(t_point *pt, int row, int col)
+t_point	init_pt(int row, int col)
 {
-	pt->row = row;
-	pt->col = col;
+	t_point	pt;
+	
+	pt.row = row;
+	pt.col = col;
+	return (pt);
 }
 
-void	init_sq(t_square *sq, int row, int col)
+t_square	init_sq(t_point sp, t_point ep)
 {
-	sq->sp.row = row;
-	sq->sp.col = col;
-	sq->ep.row = row;
-	sq->ep.col = col;
+	t_square	sq;
+	
+	sq.sp.row = sp.row;
+	sq.sp.col = sp.col;
+	sq.ep.row = ep.row;
+	sq.ep.col = ep.col;
+	return (sq);
 }
 
 int	obs_arr_len(t_point *obs_arr)

@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:02:12 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 14:16:52 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 17:28:18 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ int			str_len(char *str);
 
 void		print_map(char **map, int n_rows);
 
-void		init_pt(t_point *pt, int row, int col);
+t_point		init_pt(int row, int col);
 
-void		init_sq(t_square *sq, int row, int col);
+t_square	init_sq(t_point sp, t_point ep);
 
 int			sq_is_valid(t_square bsq, t_point *obs_arr);
 
