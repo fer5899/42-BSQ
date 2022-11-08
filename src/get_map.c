@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "../inc/get_map.h"
+#include "../inc/check_map.h"
+#include <stdio.h>
 
 char	*map_to_string(char *namefile)
 {
@@ -87,19 +89,20 @@ char	**get_map(char *namefile, int *n_rows)
 
 	ol_map = map_to_string(namefile);
 	*n_rows = row_number(ol_map) - 1;
+	//printf("%d", *n_rows);
 	map = (char **) malloc(sizeof(char *) * *n_rows);
 	i = 0;
 	auxrows = 0;
 	while (ol_map[auxrows] != '\0')
 	{
-		map[i] = (char *) malloc(sizeof(char) * col_number(ol_map));
+		map[i] = (char *) malloc(sizeof(char) * col_number(ol_map) + 2);
 		auxcols = 0;
-		while (ol_map[auxrows] != '\n')
+		while (ol_map[auxrows] != 10)
 			map[i][auxcols++] = ol_map[auxrows++];
 		map[i][auxcols] = ol_map[auxrows++];
+		map[i][++auxcols] = '\0';
 		i++;
 	}
-	i = 5;
 	free(ol_map);
 	return (map);
 }

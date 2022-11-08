@@ -64,6 +64,7 @@ int	info_rows(char *info)
 		rows_info[aux] = info[aux];
 		aux++;
 	}
+	rows_info[aux] = '\0';
 	result = a_to_i(rows_info);
 	free(rows_info);
 	return (result);
@@ -94,7 +95,7 @@ int	check_map(char **map, int row_number)
 
 	i = 1;
 	x = str_len(map[0]);
-	if (info_rows(map[0]) != row_number)
+	if (info_rows(map[0]) != row_number - 1)
 		return (0);
 	while (i < row_number)
 	{
