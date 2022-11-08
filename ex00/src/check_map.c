@@ -80,7 +80,7 @@ int	check_chars_in_line(char **map, int i)
 	while (map[1][aux] != '\n')
 	{
 		if (map[i][aux] != map[0][x - 4] && map[i][aux] \
-		!= map[0][x - 3] && map[i][aux] != map[0][x - 2])
+		!= map[0][x - 3])
 			return (0);
 		aux++;
 	}
