@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:08:50 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 23:17:14 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 23:30:07 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 int	count_obstacles(char **map, int n_rows)
 {
-	int		row;
-	int		col;
+	t_point	pt;
 	int		n_obs;
 	char	obs_char;
 
-	row = 1;
-	col = 0;
+	pt = init_pt(1, 0);
 	n_obs = 0;
 	obs_char = map[0][str_len(map[0]) - 3];
-	while (row < n_rows)
+	while (pt.row < n_rows)
 	{
-		while (col < str_len(map[1]))
+		while (pt.col < str_len(map[1]))
 		{
-			if (map[row][col] == obs_char)
+			if (map[pt.row][pt.col] == obs_char)
 				n_obs++;
-			col++;
+			pt.col++;
 		}
-		col = 0;
-		row++;
+		pt.col = 0;
+		pt.row++;
 	}
 	return (n_obs);
 }

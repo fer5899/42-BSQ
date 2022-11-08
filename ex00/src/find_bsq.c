@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 21:51:35 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 20:27:56 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 23:58:53 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,13 @@ t_square	rec_find_bsq(t_square sq, t_square minsq, t_point *obs_arr)
 		return (sq);
 }
 
+t_square	get_bsq(t_square ssq, t_square bsq, t_square *nsq, t_point *oarr)
+{
+	*nsq = rec_find_bsq(ssq, bsq, oarr);
+	bsq = compare_squares(bsq, *nsq);
+	return (bsq);
+}
+
 t_square	find_bsq(char **map, int n_rows, t_point *obs_arr)
 {
 	t_square	bsq;
@@ -66,14 +73,14 @@ t_square	find_bsq(char **map, int n_rows, t_point *obs_arr)
 			if (map[sp.row][sp.col] != map[0][str_len(map[0]) - 3])
 			{
 				start_sq = get_start_sq(n_rows, str_len(map[1]) - 1, sp);
-				next_bsq = rec_find_bsq(start_sq, bsq, obs_arr);
-				bsq = compare_squares(bsq, next_bsq);
+				bsq = get_bsq(start_sq, bsq, &next_bsq, obs_arr);
 			}
 			sp.col--;
 		}
 		sp.col = str_len(map[1]) - 2;
 		sp.row--;
 	}
+	free(obs_arr);
 	if (count_obstacles(map, n_rows) == ((n_rows - 1) * (str_len(map[1]) - 1)))
 		return (init_sq(init_pt(0, 0), init_pt(-1, -1)));
 	return (bsq);
