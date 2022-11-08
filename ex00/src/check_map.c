@@ -12,7 +12,7 @@
 
 #include "../inc/headers.h"
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_str_cmp(char *s1, char *s2)
 {
 	unsigned int	i;
 
@@ -39,7 +39,7 @@ int	a_to_i(char *numb)
 
 	if (str_len(numb) > 10)
 		return (-1);
-	else if (str_len(numb) == 10 && ft_strcmp(numb, "2147483647") == 1)
+	else if (str_len(numb) == 10 && ft_str_cmp(numb, "2147483647") == 1)
 		return (-1);
 	aux = 0;
 	result = 0;
@@ -91,7 +91,6 @@ int	check_map(char **map, int row_number)
 {
 	int	i;
 	int	x;
-	int	aux;
 
 	i = 1;
 	x = str_len(map[0]);
