@@ -6,21 +6,27 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 21:51:35 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 16:31:25 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 16:59:24 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/headers.h"
 
+#include <stdio.h>
+
 t_square	get_start_sq(int n_rows, int n_cols, t_point sp)
 {
 	t_square	start_sq;
 	int			sq_side;
+	int			max_row_idx;
+	int			max_col_idx;
 
-	if ((n_rows - sp.row) < (n_cols - sp.col))
-		sq_side = (n_rows - sp.row);
+	max_row_idx = n_rows - 1;
+	max_col_idx = n_cols - 1;
+	if ((max_row_idx - sp.row) <= (max_col_idx - sp.col))
+		sq_side = (max_row_idx - sp.row);
 	else
-		sq_side = (n_cols - sp.col);
+		sq_side = (max_col_idx - sp.col);
 	start_sq.sp = sp;
 	start_sq.ep.row = sp.row + sq_side;
 	start_sq.ep.col = sp.col + sq_side;
