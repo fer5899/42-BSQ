@@ -13,10 +13,16 @@
 #ifndef MAIN_H
 # define MAIN_H
 
-#include "../inc/print_map.h"
+#include "print_map.h"
 
-#include "../inc/check_map.h"
+#include "check_map.h"
 
-#include "../inc/get_map.h"
+#include "get_map.h"
+
+#include "insert_bsq.h"
+
+#include "extract_obstacles.h"
+
+#include "structs.h"
 
 #endif

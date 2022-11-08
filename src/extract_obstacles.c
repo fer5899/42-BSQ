@@ -70,7 +70,7 @@ t_point	*extract_obstacles(char **map, int n_rows, int *n_obs)
 // TESTING
 
 #include "../inc/get_map.h"
-#include "../inc/draw_bsq.h"
+#include "../inc/insert_bsq.h"
 #include <stdio.h>
 
 int	sq_is_valid(t_square bsq, t_point *obs_arr, int n_obs);
@@ -96,7 +96,7 @@ int	main(void)
 	// printf("%d\n", n_rows);
 	print_map(map, n_rows);
 	obs_arr = extract_obstacles(map, n_rows, &n_obs);
-	map = draw_bsq(map, n_rows, bsq);
+	map = insert_bsq(map, n_rows, bsq);
 	write(1, "\n", 1);
 	print_map(map, n_rows);
 	printf("\nSquare is valid: %d\n\n", sq_is_valid(bsq, obs_arr, n_obs));

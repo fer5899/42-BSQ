@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_bsq.h                                         :+:      :+:    :+:   */
+/*   insert_bsq.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DRAW_BSQ_H
-# define DRAW_BSQ_H
+#ifndef insert_BSQ_H
+# define insert_BSQ_H
 
 # include "../inc/structs.h"
 # include "../inc/print_map.h"
 
-char	**draw_bsq(char **map, int n_rows, t_square bsq);
+char	**insert_bsq(char **map, int n_rows, t_square bsq);
 
 #endif

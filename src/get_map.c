@@ -89,7 +89,6 @@ char	**get_map(char *namefile, int *n_rows)
 
 	ol_map = map_to_string(namefile);
 	*n_rows = row_number(ol_map) - 1;
-	//printf("%d", *n_rows);
 	map = (char **) malloc(sizeof(char *) * *n_rows);
 	i = 0;
 	auxrows = 0;

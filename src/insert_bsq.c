@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_bsq.c                                         :+:      :+:    :+:   */
+/*   insert_bsq.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/draw_bsq.h"
+#include "../inc/insert_bsq.h"
 
-char	**draw_bsq(char **map, int n_rows, t_square bsq)
+char	**insert_bsq(char **map, int n_rows, t_square bsq)
 {
 	int	row;
 	int	col;
