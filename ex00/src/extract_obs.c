@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:08:50 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 21:16:38 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 23:17:14 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ t_point	*create_obs_arr(char **map, int n_rows)
 	int		n_obs;
 
 	n_obs = (count_obstacles(map, n_rows) + 1);
-	obs_arr = (t_point *) malloc(sizeof(*obs_arr) * n_obs);
-	if (obs_arr == NULL)
-		exit(2);
+	obs_arr = pt_malloc(n_obs);
 	return (obs_arr);
 }
 
