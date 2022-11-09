@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:02:12 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/09 12:39:35 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:46:18 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,6 @@ t_sq			compare_squares(t_sq bsq, t_sq next_bsq);
 
 t_sq			get_start_sq(int n_rows, int n_cols, t_pt sp);
 
-int				sq_size(t_sq sq);
-
 char			**get_map_stdin(char *ol_map, int *n_rows);
 
 t_sq			rec_find_bsq(t_sq sq, t_sq minsq, t_pt *obs_arr);
@@ -98,6 +96,8 @@ t_pt			*pt_malloc(int size);
 t_sq			get_bsq(t_sq ssq, t_sq bsq, t_sq *nsq, t_pt *oarr);
 
 t_sq			p_find_bsq(char **map, int n_rows, t_pt *obs_arr);
+
+t_sq			find_bsq(char **map, int n_rows, t_pt *obs_arr);
 
 void			free_map(char **map, int n_rows);
 

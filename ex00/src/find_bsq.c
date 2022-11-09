@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 21:51:35 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/09 12:39:35 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:45:42 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 t_sq	get_start_sq(int n_rows, int n_cols, t_pt sp)
 {
 	t_sq	start_sq;
-	int			sq_side;
-	int			max_row_idx;
-	int			max_col_idx;
+	int		sq_side;
+	int		max_row_idx;
+	int		max_col_idx;
 
 	max_row_idx = n_rows - 1;
 	max_col_idx = n_cols - 1;
@@ -31,14 +31,9 @@ t_sq	get_start_sq(int n_rows, int n_cols, t_pt sp)
 	return (start_sq);
 }
 
-int	sq_size(t_sq sq)
-{
-	return (sq.ep.row - sq.sp.row);
-}
-
 t_sq	rec_find_bsq(t_sq sq, t_sq minsq, t_pt *obs_arr)
 {
-	if (sq_size(sq) < sq_size(minsq))
+	if ((sq.ep.row - sq.sp.row) < (minsq.ep.row - minsq.sp.row))
 		return (init_sq(init_pt(0, 0), init_pt(-1, -1)));
 	if (!sq_is_valid(sq, obs_arr))
 	{
@@ -60,7 +55,7 @@ t_sq	get_bsq(t_sq ssq, t_sq bsq, t_sq *nsq, t_pt *oarr)
 t_sq	p_find_bsq(char **map, int n_rows, t_pt *obs_arr)
 {
 	t_sq	bsq;
-	
+
 	bsq = init_sq(init_pt(0, 0), init_pt(-1, -1));
 	if (map[1] == NULL)
 	{
@@ -81,7 +76,7 @@ t_sq	find_bsq(char **map, int n_rows, t_pt *obs_arr)
 	t_sq	bsq;
 	t_sq	next_bsq;
 	t_sq	start_sq;
-	t_pt		sp;
+	t_pt	sp;
 
 	sp = init_pt(n_rows - 1, str_len(map[1]) - 2);
 	bsq = init_sq(sp, sp);
