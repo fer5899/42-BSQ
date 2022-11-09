@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 21:51:35 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 23:58:53 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 09:34:26 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,25 @@ t_square	get_bsq(t_square ssq, t_square bsq, t_square *nsq, t_point *oarr)
 	return (bsq);
 }
 
+t_square	p_find_bsq(char **map, int n_rows, t_point *obs_arr)
+{
+	t_square	bsq;
+	
+	bsq = init_sq(init_pt(0, 0), init_pt(-1, -1));
+	if (map[1][0] == '\0')
+	{
+		free(obs_arr);
+		return (bsq);
+	}
+	if (count_obstacles(map, n_rows) == ((n_rows - 1) * (str_len(map[1]) - 1)))
+	{
+		free(obs_arr);
+		return (bsq);
+	}
+	find_bsq(map, n_rows, obs_arr);
+	return (bsq);
+}
+
 t_square	find_bsq(char **map, int n_rows, t_point *obs_arr)
 {
 	t_square	bsq;
@@ -64,7 +83,7 @@ t_square	find_bsq(char **map, int n_rows, t_point *obs_arr)
 	t_square	start_sq;
 	t_point		sp;
 
-	sp = init_pt(n_rows - 1, str_len(map[1]) - 1 - 1);
+	sp = init_pt(n_rows - 1, str_len(map[1]) - 2);
 	bsq = init_sq(sp, sp);
 	while (sp.row >= 1)
 	{
@@ -73,7 +92,8 @@ t_square	find_bsq(char **map, int n_rows, t_point *obs_arr)
 			if (map[sp.row][sp.col] != map[0][str_len(map[0]) - 3])
 			{
 				start_sq = get_start_sq(n_rows, str_len(map[1]) - 1, sp);
-				bsq = get_bsq(start_sq, bsq, &next_bsq, obs_arr);
+				next_bsq = rec_find_bsq(start_sq, bsq, obs_arr);
+				bsq = compare_squares(bsq, next_bsq);
 			}
 			sp.col--;
 		}
@@ -81,7 +101,5 @@ t_square	find_bsq(char **map, int n_rows, t_point *obs_arr)
 		sp.row--;
 	}
 	free(obs_arr);
-	if (count_obstacles(map, n_rows) == ((n_rows - 1) * (str_len(map[1]) - 1)))
-		return (init_sq(init_pt(0, 0), init_pt(-1, -1)));
 	return (bsq);
 }
