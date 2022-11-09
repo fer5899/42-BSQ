@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:02:12 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/09 09:35:03 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:12:20 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int				str_len(char *str);
 
 void			stdin_launch(void);
 
-char			*read_stdin();
+char			*read_stdin(char *stdin_map);
 
 unsigned int	strl_cpy(char *dest, char *src, unsigned int size);
 
