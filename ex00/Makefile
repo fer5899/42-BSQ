@@ -1,4 +1,4 @@
-MY_SOURCES = src/p_mallocs.c src/check_map.c src/extract_obs.c src/find_bsq.c src/get_map.c src/sq_utils.c src/main.c src/print_map.c
+MY_SOURCES = src/p_mallocs.c src/check_map.c src/extract_obs.c src/find_bsq.c src/get_map.c src/sq_utils.c src/main.c src/print_map.c src/map_utils.c
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
 

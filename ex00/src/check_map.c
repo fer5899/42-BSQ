@@ -96,8 +96,8 @@ int	check_map(char **map, int row_number)
 	x = str_len(map[0]);
 	if (info_rows(map[0]) != row_number - 1)
 		return (0);
-	if (x < 4 )
-		return(0);
+	if (x < 4)
+		return (0);
 	while (i < row_number)
 	{
 		if (str_len(map[i]) != str_len(map[1]))

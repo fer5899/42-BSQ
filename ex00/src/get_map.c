@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../inc/headers.h"
+#include <stdio.h>
 
 char	*map_to_string(char *namefile)
 {
@@ -57,7 +58,11 @@ int	col_number(char *str)
 {
 	t_point	auxpt;
 	int		result;
+	int		aux;
 
+	aux = 0;
+	while (str[aux] != '\n')
+		aux++;
 	auxpt = init_pt(0, 0);
 	result = 0;
 	while (str[auxpt.row++] != '\0')
@@ -72,6 +77,8 @@ int	col_number(char *str)
 		if (str[auxpt.row] == '\n')
 			auxpt.col++;
 	}
+	if (aux > result)
+		result = aux;
 	return (result);
 }
 
