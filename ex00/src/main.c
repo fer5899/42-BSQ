@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:34:02 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/09 14:38:29 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 16:28:43 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ void	iterate_args(int argc, char **argv)
 		n_rows = 0;
 		map = get_map(argv[arg_idx], &n_rows, 1);
 		if (check_map(map, n_rows) == 0)
-			write(1, "map error", 10);
+			write(1, "map error\n", 11);
+			free_map(map, n_rows);
 		else
 		{
 			bsq = p_find_bsq(map, n_rows, extract_obstacles(map, n_rows));
@@ -49,6 +50,7 @@ void	iterate_args(int argc, char **argv)
 		free_map_m(map, n_rows);
 		write(1, "\n", 1);
 		arg_idx++;
+		write(1, "\n", 1);
 	}
 }
 
