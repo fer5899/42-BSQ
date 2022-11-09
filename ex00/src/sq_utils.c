@@ -6,24 +6,24 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 18:59:05 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 23:18:16 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:39:35 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/headers.h"
 
-t_point	init_pt(int row, int col)
+t_pt	init_pt(int row, int col)
 {
-	t_point	pt;
+	t_pt	pt;
 
 	pt.row = row;
 	pt.col = col;
 	return (pt);
 }
 
-t_square	init_sq(t_point sp, t_point ep)
+t_sq	init_sq(t_pt sp, t_pt ep)
 {
-	t_square	sq;
+	t_sq	sq;
 
 	sq.sp.row = sp.row;
 	sq.sp.col = sp.col;
@@ -32,7 +32,7 @@ t_square	init_sq(t_point sp, t_point ep)
 	return (sq);
 }
 
-int	obs_arr_len(t_point *obs_arr)
+int	obs_arr_len(t_pt *obs_arr)
 {
 	int	len;
 
@@ -42,7 +42,7 @@ int	obs_arr_len(t_point *obs_arr)
 	return (len);
 }
 
-int	sq_is_valid(t_square bsq, t_point *obs_arr)
+int	sq_is_valid(t_sq bsq, t_pt *obs_arr)
 {
 	int	i;
 
@@ -57,7 +57,7 @@ int	sq_is_valid(t_square bsq, t_point *obs_arr)
 	return (1);
 }
 
-t_square	compare_squares(t_square bsq, t_square next_bsq)
+t_sq	compare_squares(t_sq bsq, t_sq next_bsq)
 {
 	int	bsq_side;
 	int	next_bsq_side;

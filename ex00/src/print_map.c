@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:25:17 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 12:45:14 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:36:58 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	print_map(char **map, int n_rows)
 	}
 }
 
-char	**insert_bsq(char **map, int n_rows, t_square bsq)
+char	**insert_bsq(char **map, int n_rows, t_sq bsq)
 {
 	int	row;
 	int	col;

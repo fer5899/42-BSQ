@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:08:41 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/09 12:13:45 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:38:08 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,13 @@ char	*read_stdin(char *stdin_map)
 		rewrite_for_error(stdin_map);
 	rsl = stdin_map;
 	free(stdin_map);
-	return(rsl);
+	return (rsl);
 }
 
 void	stdin_launch(void)
 {
 	char		*stdin_map;
-	//t_square	bsq;
+	//t_sq	bsq;
 	char		**map;
 	int			n_rows;
 

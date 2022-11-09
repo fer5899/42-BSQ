@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:08:50 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 23:30:07 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:39:35 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	count_obstacles(char **map, int n_rows)
 {
-	t_point	pt;
+	t_pt	pt;
 	int		n_obs;
 	char	obs_char;
 
@@ -35,9 +35,9 @@ int	count_obstacles(char **map, int n_rows)
 	return (n_obs);
 }
 
-t_point	*create_obs_arr(char **map, int n_rows)
+t_pt	*create_obs_arr(char **map, int n_rows)
 {
-	t_point	*obs_arr;
+	t_pt	*obs_arr;
 	int		n_obs;
 
 	n_obs = (count_obstacles(map, n_rows) + 1);
@@ -45,11 +45,11 @@ t_point	*create_obs_arr(char **map, int n_rows)
 	return (obs_arr);
 }
 
-t_point	*extract_obstacles(char **map, int n_rows)
+t_pt	*extract_obstacles(char **map, int n_rows)
 {
-	t_point	pt;
-	t_point	*obs_arr;
-	t_point	*aux;
+	t_pt	pt;
+	t_pt	*obs_arr;
+	t_pt	*aux;
 
 	pt = init_pt(1, 0);
 	obs_arr = create_obs_arr(map, n_rows);

@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:34:02 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/09 12:35:26 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:40:14 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	iterate_args(int argc, char **argv)
 {
 	char		**map;
-	t_square	bsq;
+	t_sq		bsq;
 	int			n_rows;
 	int			arg_idx;
 

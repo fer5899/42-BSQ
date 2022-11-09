@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:27:48 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/09 12:16:31 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:39:35 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*map_to_string(char *namefile)
 
 int	row_number(char *str)
 {
-	t_point	auxpt;
+	t_pt	auxpt;
 
 	auxpt = init_pt(0, 1);
 	while (str[auxpt.row] != '\0')
@@ -56,7 +56,7 @@ int	row_number(char *str)
 
 int	col_number(char *str)
 {
-	t_point	auxpt;
+	t_pt	auxpt;
 	int		result;
 	int		aux;
 
@@ -85,7 +85,7 @@ int	col_number(char *str)
 char	**get_map(char *namefile, int *n_rows)
 {
 	char	*ol_map;
-	t_point	auxpt;
+	t_pt	auxpt;
 	int		i;
 	char	**map;
 
@@ -112,7 +112,7 @@ char	**get_map(char *namefile, int *n_rows)
 
 char	**get_map_stdin(char *ol_map, int *n_rows)
 {
-	t_point	auxpt;
+	t_pt	auxpt;
 	int		i;
 	char	**map;
 
