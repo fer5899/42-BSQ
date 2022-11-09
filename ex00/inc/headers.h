@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:02:12 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/08 23:16:40 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/08 23:58:41 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,7 @@ char		*c_malloc(int size);
 char		**cc_malloc(int size);
 
 t_point		*pt_malloc(int size);
+
+t_square	get_bsq(t_square ssq, t_square bsq, t_square *nsq, t_point *oarr);
 
 #endif
