@@ -6,12 +6,11 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:08:41 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/09 13:25:53 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 14:08:12 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/headers.h"
-#include <stdio.h>
 
 unsigned int	strl_cpy(char *dest, char *src, unsigned int size)
 {
@@ -59,7 +58,6 @@ char	*read_stdin(char *stdin_map)
 	if (count_line_jumps(stdin_map) == 0)
 		rewrite_for_error(stdin_map);
 	rsl = stdin_map;
-	//free(stdin_map);
 	return (rsl);
 }
 
@@ -79,5 +77,6 @@ void	stdin_launch(void)
 		if (bsq.ep.row != -1)
 			insert_bsq(map, n_rows, bsq);
 		print_map(map, n_rows);
+		free_map(map, n_rows);
 	}
 }
