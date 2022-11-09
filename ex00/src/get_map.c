@@ -79,10 +79,9 @@ char	**get_map(char *namefile, int *n_rows)
 	t_point	auxpt;
 	int		i;
 	char	**map;
-
 	ol_map = map_to_string(namefile);
 	*n_rows = row_number(ol_map) - 1;
-	map = cc_malloc(*n_rows);
+	map = cc_malloc(*n_rows + 1);
 	i = 0;
 	auxpt = init_pt(0, 0);
 	while (ol_map[auxpt.row] != '\0')
@@ -95,6 +94,8 @@ char	**get_map(char *namefile, int *n_rows)
 		map[i][++auxpt.col] = '\0';
 		i++;
 	}
+	if (*n_rows != i)
+		map[0] = "xx";
 	free(ol_map);
 	return (map);
 }
