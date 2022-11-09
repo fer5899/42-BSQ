@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:02:12 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/09 12:12:20 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:32:31 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,7 @@ t_point			*pt_malloc(int size);
 t_square		get_bsq(t_square ssq, t_square bsq, t_square *nsq, t_point *oarr);
 
 t_square		p_find_bsq(char **map, int n_rows, t_point *obs_arr);
+
+void			free_map(char **map, int n_rows);
 
 #endif

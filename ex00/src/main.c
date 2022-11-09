@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:34:02 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/09 11:01:06 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:35:26 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	iterate_args(int argc, char **argv)
 			}
 			print_map(map, n_rows);
 		}
+		free_map(map, n_rows);
 		arg_idx++;
 	}
 }
@@ -47,5 +48,6 @@ int	main(int argc, char **argv)
 	{
 		iterate_args(argc, argv);
 	}
+	system ("leaks -q bsq");
 	return (0);
 }
