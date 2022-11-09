@@ -48,6 +48,5 @@ int	main(int argc, char **argv)
 	{
 		iterate_args(argc, argv);
 	}
-	system ("leaks -q bsq");
 	return (0);
 }
