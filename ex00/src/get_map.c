@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../inc/headers.h"
-#include <stdio.h>
 
 char	*map_to_string(char *namefile)
 {
