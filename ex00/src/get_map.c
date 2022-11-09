@@ -31,6 +31,8 @@ char	*map_to_string(char *namefile)
 		str = c_malloc(--aux);
 		file_adress = open(namefile, O_RDONLY);
 		read(file_adress, str, aux);
+		if (count_line_jumps(str) == 0)
+			rewrite_for_error(str);
 	}
 	if (close(file_adress) == -1)
 		write(1, "map error\n", 10);
@@ -79,6 +81,7 @@ char	**get_map(char *namefile, int *n_rows)
 	t_point	auxpt;
 	int		i;
 	char	**map;
+
 	ol_map = map_to_string(namefile);
 	*n_rows = row_number(ol_map) - 1;
 	map = cc_malloc(*n_rows + 1);

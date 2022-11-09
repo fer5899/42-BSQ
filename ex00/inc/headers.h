@@ -47,6 +47,10 @@ int			row_number(char *str);
 
 int			col_number(char *str);
 
+int			count_line_jumps(char *str);
+
+char		*rewrite_for_error(char *str);
+
 char		**get_map(char *namefile, int *n_rows);
 
 char		**insert_bsq(char **map, int n_rows, t_square bsq);
