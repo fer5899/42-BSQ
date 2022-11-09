@@ -17,23 +17,12 @@ int	main(int argc, char **argv)
 	int			aux;
 	int			n_rows;
 	char		**map;
-	char		ch;
-	char		stdin_map[100];
 	t_square	bsq;
 
 	bsq = init_sq(init_pt(0, 0), init_pt(-1, -1));
 	aux = 0;
 	if (argc == 1)
-	{
-		while(read(0, &ch, 1) > 0 && ch != 27)
-		{
-			stdin_map[aux] = ch;
-			aux++;
-		}
-		n_rows = 0;
-		map = get_map_stdin(stdin_map, &n_rows);
-		print_map(map, n_rows);
-	}
+		stdin_bsq();
 	else
 	{
 		aux = 1;
@@ -41,7 +30,6 @@ int	main(int argc, char **argv)
 		{
 			n_rows = 0;
 			map = get_map(argv[aux], &n_rows);
-			// print_map(map, n_rows);
 			if (check_map(map, n_rows) == 0)
 				write(1, "map error\n", 11);
 			else
