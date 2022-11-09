@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 12:02:12 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/09 12:46:18 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:03:24 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,6 @@ t_sq			p_find_bsq(char **map, int n_rows, t_pt *obs_arr);
 t_sq			find_bsq(char **map, int n_rows, t_pt *obs_arr);
 
 void			free_map(char **map, int n_rows);
+
 
 #endif
