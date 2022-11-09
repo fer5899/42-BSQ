@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stdin_launch.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bramos-l <bramos-l@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:08:41 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/09 10:08:43 by bramos-l         ###   ########.fr       */
+/*   Updated: 2022/11/09 11:25:41 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,14 @@ char	*read_stdin()
 	stdin_aux = c_malloc(1);
 	while(read(0, &ch, 1) > 0 && ch != 27)
 	{
-		//free(stdin_aux);
+		free(stdin_aux);
 		stdin_aux = c_malloc(aux + 1);
+		if (stdin_aux == NULL)
+			exit(1);
 		strl_cpy(stdin_aux, stdin_rst, aux + 1);
-		//free(stdin_rst);
+		free(stdin_rst);
 		stdin_rst = c_malloc(aux + 1);
 		strl_cpy(stdin_rst, stdin_aux, aux + 1);
-		stdin_rst = stdin_aux;
 		stdin_rst[aux - 1] = ch;
 		aux++;
 	}
