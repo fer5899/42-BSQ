@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:08:41 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/09 12:38:08 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:41:52 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ char	*read_stdin(char *stdin_map)
 	{
 		free(stdin_aux);
 		stdin_aux = c_malloc(aux + 1);
-		if (stdin_aux == NULL)
-			exit(1);
 		strl_cpy(stdin_aux, stdin_map, aux + 1);
 		free(stdin_map);
 		stdin_map = c_malloc(aux + 1);
