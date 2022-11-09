@@ -51,7 +51,7 @@ int				count_line_jumps(char *str);
 
 char			*rewrite_for_error(char *str);
 
-char			**get_map(char *namefile, int *n_rows);
+char			**get_map(char *namefile, int *n_rows, int input);
 
 char			**insert_bsq(char **map, int n_rows, t_sq bsq);
 
@@ -79,8 +79,6 @@ t_sq			compare_squares(t_sq bsq, t_sq next_bsq);
 
 t_sq			get_start_sq(int n_rows, int n_cols, t_pt sp);
 
-char			**get_map_stdin(char *ol_map, int *n_rows);
-
 t_sq			rec_find_bsq(t_sq sq, t_sq minsq, t_pt *obs_arr);
 
 t_sq			ind_bsq(char **map, int n_rows, t_pt *obs_arr);
@@ -100,5 +98,7 @@ t_sq			p_find_bsq(char **map, int n_rows, t_pt *obs_arr);
 t_sq			find_bsq(char **map, int n_rows, t_pt *obs_arr);
 
 void			free_map(char **map, int n_rows);
+
+char			*get_ol_map(char *str, int input);
 
 #endif

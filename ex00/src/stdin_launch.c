@@ -59,23 +59,18 @@ char	*read_stdin(char *stdin_map)
 	if (count_line_jumps(stdin_map) == 0)
 		rewrite_for_error(stdin_map);
 	rsl = stdin_map;
-	free(stdin_map);
+	//free(stdin_map);
 	return (rsl);
 }
 
 void	stdin_launch(void)
 {
-	char	*stdin_map;
 	t_sq	bsq;
 	char	**map;
 	int		n_rows;
 
-	stdin_map = NULL;
-	stdin_map = read_stdin(stdin_map);
-	printf("\n\n%s", stdin_map);
 	n_rows = 0;
-	map = get_map_stdin(stdin_map, &n_rows);
-	// free(stdin_map);
+	map = get_map("", &n_rows, 0);
 	if (check_map(map, n_rows) == 0)
 		write(1, "map error\n", 11);
 	else

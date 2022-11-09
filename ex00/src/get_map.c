@@ -82,14 +82,14 @@ int	col_number(char *str)
 	return (result);
 }
 
-char	**get_map(char *namefile, int *n_rows)
+char	**get_map(char *namefile, int *n_rows, int input)
 {
 	char	*ol_map;
 	t_pt	auxpt;
 	int		i;
 	char	**map;
 
-	ol_map = map_to_string(namefile);
+	ol_map = get_ol_map(namefile, input);
 	*n_rows = row_number(ol_map) - 1;
 	map = cc_malloc(*n_rows + 1);
 	i = 0;
@@ -110,28 +110,14 @@ char	**get_map(char *namefile, int *n_rows)
 	return (map);
 }
 
-char	**get_map_stdin(char *ol_map, int *n_rows)
+char	*get_ol_map(char *str, int input)
 {
-	t_pt	auxpt;
-	int		i;
-	char	**map;
+	char	*result;
 
-	*n_rows = row_number(ol_map) - 1;
-	map = cc_malloc(*n_rows);
-	i = 0;
-	auxpt.row = 0;
-	while (ol_map[auxpt.row] != '\0')
-	{
-		map[i] = c_malloc(col_number(ol_map) + 2);
-		auxpt.col = 0;
-		while (ol_map[auxpt.row] != '\n')
-			map[i][auxpt.col++] = ol_map[auxpt.row++];
-		map[i][auxpt.col] = ol_map[auxpt.row++];
-		map[i][++auxpt.col] = '\0';
-		i++;
-	}
-	if (*n_rows != i)
-		map[0] = "xx";
-	free(ol_map);
-	return (map);
+	result = NULL;
+	if (input == 0)
+		result = read_stdin(result);
+	else
+		result = map_to_string(str);
+	return (result);
 }

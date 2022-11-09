@@ -23,7 +23,7 @@ void	iterate_args(int argc, char **argv)
 	while (arg_idx < argc)
 	{
 		n_rows = 0;
-		map = get_map(argv[arg_idx], &n_rows);
+		map = get_map(argv[arg_idx], &n_rows, 1);
 		if (check_map(map, n_rows) == 0)
 			write(1, "map error\n", 11);
 		else
