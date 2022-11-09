@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 21:51:35 by fgomez-d          #+#    #+#             */
-/*   Updated: 2022/11/09 10:01:01 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 10:25:12 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ t_square	get_bsq(t_square ssq, t_square bsq, t_square *nsq, t_point *oarr)
 	return (bsq);
 }
 
-#include <stdio.h>
-
 t_square	p_find_bsq(char **map, int n_rows, t_point *obs_arr)
 {
 	t_square	bsq;
@@ -74,7 +72,7 @@ t_square	p_find_bsq(char **map, int n_rows, t_point *obs_arr)
 		free(obs_arr);
 		return (bsq);
 	}
-	find_bsq(map, n_rows, obs_arr);
+	bsq = find_bsq(map, n_rows, obs_arr);
 	return (bsq);
 }
 
