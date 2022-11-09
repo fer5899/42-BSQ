@@ -26,6 +26,7 @@ void	iterate_args(int argc, char **argv)
 		map = get_map(argv[arg_idx], &n_rows, 1);
 		if (check_map(map, n_rows) == 0)
 			write(1, "map error\n", 11);
+			free_map(map, n_rows);
 		else
 		{
 			bsq = p_find_bsq(map, n_rows, extract_obstacles(map, n_rows));
@@ -37,6 +38,7 @@ void	iterate_args(int argc, char **argv)
 			free_map(map, n_rows);
 		}
 		arg_idx++;
+		write(1, "\n", 1);
 	}
 }
 
