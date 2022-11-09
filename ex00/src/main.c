@@ -6,13 +6,11 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:34:02 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/09 10:24:56 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 11:01:06 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/headers.h"
-
-#include <stdio.h>
 
 void	iterate_args(int argc, char **argv)
 {
@@ -44,7 +42,7 @@ void	iterate_args(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	if (argc == 1)
-		return (0);// stdin_bsq();
+		stdin_launch();
 	else
 	{
 		iterate_args(argc, argv);
