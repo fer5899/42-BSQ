@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:08:41 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/09 12:41:52 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 13:25:53 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,23 +65,24 @@ char	*read_stdin(char *stdin_map)
 
 void	stdin_launch(void)
 {
-	char		*stdin_map;
-	//t_sq	bsq;
-	char		**map;
-	int			n_rows;
+	char	*stdin_map;
+	t_sq	bsq;
+	char	**map;
+	int		n_rows;
 
 	stdin_map = NULL;
-	read_stdin(stdin_map);
+	stdin_map = read_stdin(stdin_map);
+	printf("\n\n%s", stdin_map);
 	n_rows = 0;
 	map = get_map_stdin(stdin_map, &n_rows);
-	free(stdin_map);
-	// if (check_map(map, n_rows) == 0)
-	// 	write(1, "map error\n", 11);
-	// else
-	// {
-	// 	bsq = p_find_bsq(map, n_rows, extract_obstacles(map, n_rows));
-	// 	if (bsq.ep.row != -1)
-	// 		insert_bsq(map, n_rows, bsq);
-	// 	print_map(map, n_rows);
-	// }
+	// free(stdin_map);
+	if (check_map(map, n_rows) == 0)
+		write(1, "map error\n", 11);
+	else
+	{
+		bsq = p_find_bsq(map, n_rows, extract_obstacles(map, n_rows));
+		if (bsq.ep.row != -1)
+			insert_bsq(map, n_rows, bsq);
+		print_map(map, n_rows);
+	}
 }
