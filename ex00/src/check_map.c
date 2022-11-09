@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:32:11 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/08 23:15:30 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 14:28:30 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ int	check_map(char **map, int row_number)
 
 	i = 1;
 	x = str_len(map[0]);
+	if (count_line_jumps(map[0]) == 0)
+		return (0);
 	if (info_rows(map[0]) != row_number - 1)
 		return (0);
 	if (x < 4)

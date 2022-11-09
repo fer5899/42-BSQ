@@ -6,7 +6,7 @@
 /*   By: fgomez-d <fgomez-d@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:27:48 by bramos-l          #+#    #+#             */
-/*   Updated: 2022/11/09 12:39:35 by fgomez-d         ###   ########.fr       */
+/*   Updated: 2022/11/09 14:33:17 by fgomez-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*map_to_string(char *namefile)
 	file_adress = open (namefile, O_RDONLY);
 	aux = 1;
 	if (file_adress == -1)
-		write (1, "map error\n", 10);
+		rewrite_for_error(str);
 	else
 	{
 		while (read(file_adress, str, 1) != 0)
@@ -35,7 +35,7 @@ char	*map_to_string(char *namefile)
 			rewrite_for_error(str);
 	}
 	if (close(file_adress) == -1)
-		write(1, "map error\n", 10);
+		rewrite_for_error(str);
 	return (str);
 }
 
@@ -104,7 +104,7 @@ char	**get_map(char *namefile, int *n_rows, int input)
 		i++;
 	}
 	if (*n_rows != i)
-		map[0] = "xx";
+		rewrite_for_error(map[0]);
 	free(ol_map);
 	return (map);
 }
